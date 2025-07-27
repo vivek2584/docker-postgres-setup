@@ -1,0 +1,17 @@
+services:
+  database:
+    image: 'postgres:latest'
+
+    ports:
+      - 5432:5432
+
+    environment:
+      postgres_password: vivek # edit password if needed
+
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql  # remove this line if you don't need a init.sql file
+
+volumes:
+  db-data:
