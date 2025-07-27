@@ -6,7 +6,7 @@ services:
       - 5432:5432
 
     environment:
-      postgres_password: vivek # edit password if needed
+      POSTGRES_PASSWORD: vivek # edit password if needed
 
     volumes:
       - db-data:/var/lib/postgresql/data
